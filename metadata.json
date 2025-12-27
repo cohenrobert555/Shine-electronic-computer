@@ -1,0 +1,9 @@
+{
+  "name": "Shine Electronic & Computer",
+  "description": "Expert tech repair and installation services in New York City. Specializing in Computers, Home Audio/Video, Security Systems, and Media Conversion.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
