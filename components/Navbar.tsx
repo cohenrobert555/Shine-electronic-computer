@@ -34,38 +34,38 @@ const Navbar: React.FC<NavbarProps> = ({ currentRoute, setCurrentRoute }) => {
 
       <div className="bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-24">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             <div className="flex items-center cursor-pointer" onClick={() => setCurrentRoute(AppRoute.HOME)}>
-              <Logo className="hidden sm:flex" />
+              <Logo className="hidden lg:flex" size="md" />
               {/* Simplified mobile logo */}
-              <div className="flex sm:hidden items-center gap-2">
+              <div className="flex lg:hidden items-center gap-2">
                 <span className="text-xl font-serif lowercase text-slate-900" style={{ fontFamily: 'Georgia, serif' }}>shine</span>
                 <div className="flex flex-col gap-[1px] -rotate-[25deg]">
-                  <div className="w-3 h-[2px] bg-[#e11d48]"></div>
-                  <div className="w-3 h-[2px] bg-[#22c55e]"></div>
-                  <div className="w-3 h-[2px] bg-[#2563eb]"></div>
+                  <div className="w-4 h-[2px] bg-[#e11d48]"></div>
+                  <div className="w-4 h-[2px] bg-[#22c55e]"></div>
+                  <div className="w-4 h-[2px] bg-[#2563eb]"></div>
                 </div>
               </div>
             </div>
 
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => setCurrentRoute(AppRoute.HOME)}
-                className={`text-sm font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.HOME ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
+                className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.HOME ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
               >
                 Home
                 <span className={`absolute -bottom-1 left-0 right-0 h-[2px] brand-gradient transition-transform duration-300 ${currentRoute === AppRoute.HOME ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
               </button>
               <button 
                 onClick={() => setCurrentRoute(AppRoute.SERVICES)}
-                className={`text-sm font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.SERVICES ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
+                className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.SERVICES ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
               >
                 Services
                 <span className={`absolute -bottom-1 left-0 right-0 h-[2px] brand-gradient transition-transform duration-300 ${currentRoute === AppRoute.SERVICES ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
               </button>
               <button 
                 onClick={() => setCurrentRoute(AppRoute.CONTACT)}
-                className={`text-sm font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.CONTACT ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
+                className={`text-xs font-bold uppercase tracking-widest transition-all relative group ${currentRoute === AppRoute.CONTACT ? 'text-slate-900' : 'text-slate-500 hover:text-slate-900'}`}
               >
                 Contact
                 <span className={`absolute -bottom-1 left-0 right-0 h-[2px] brand-gradient transition-transform duration-300 ${currentRoute === AppRoute.CONTACT ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
@@ -75,9 +75,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentRoute, setCurrentRoute }) => {
             <div className="flex items-center gap-4">
               <a 
                 href={`tel:${BUSINESS_INFO.phone1.replace(/\D/g,'')}`}
-                className="hidden lg:flex items-center gap-2 px-6 py-3 brand-gradient text-white rounded-xl text-sm font-bold transition-all shadow-lg hover:brightness-110 active:scale-95"
+                className="hidden lg:flex items-center gap-2 px-5 py-2.5 brand-gradient text-white rounded-xl text-xs font-bold transition-all shadow-md hover:brightness-110 active:scale-95"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 Book Repair
               </a>
               <button className="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors">
