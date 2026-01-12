@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // 상대 경로 설정을 통해 하위 디렉토리 배포 대응
+  // Vercel은 루트 경로를 기본으로 사용하므로 base를 '/'로 설정하거나 생략 가능
+  base: '/', 
   define: {
-    // 브라우저 환경에서 process.env.API_KEY 접근 가능하게 설정
-    'process.env': process.env
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'terser',
+  },
+  server: {
+    historyApiFallback: true,
   }
 });
